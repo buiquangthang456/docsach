@@ -1,0 +1,49 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+    id "dev.flutter.flutter-gradle-plugin"
+    id("com.google.gms.google-services")
+}
+
+android {
+    namespace = "com.example.rbooks"
+    compileSdk = flutter.compileSdkVersion
+    ndkVersion = "25.1.8937393"
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17// Sử dụng bản hỗ trợ cao nhất
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+        kotlinOptions {
+            jvmTarget = 17
+        }
+
+
+
+    defaultConfig {
+        applicationId "com.example.rbooks"  // Tên package của bạn
+        minSdkVersion 23                // Đảm bảo minSdkVersion >= 21 (khuyến nghị)
+        targetSdkVersion 35            // Đặt targetSdkVersion là 33 (hoặc cao hơn nếu cần)
+        versionCode flutter.versionCode
+        versionName flutter.versionName
+        multiDexEnabled true               // Bật nếu minSdkVersion < 21
+    }
+
+    buildTypes {
+        release {
+            // TODO: Add your own signing config for the release build.
+            // Signing with the debug keys for now, so `flutter run --release` works.
+            signingConfig = signingConfigs.debug
+        }
+    }
+}
+
+flutter {
+    source = "../.."
+}
+apply plugin: 'com.google.gms.google-services'
+tasks.withType(GroovyCompile) {
+    options.forkOptions.jvmArgs << '--add-opens java.base/java.lang=ALL-UNNAMED'
+}

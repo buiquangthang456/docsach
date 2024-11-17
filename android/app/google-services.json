@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "562819595722",
+    "project_id": "readbook-3e753",
+    "storage_bucket": "readbook-3e753.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:562819595722:android:d74a861273d1f3c5aa6333",
+        "android_client_info": {
+          "package_name": "com.example.rbooks"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA16Ma0mCsWbvXflITw-SLKOHdBSGnJ32U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
